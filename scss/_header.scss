@@ -1,0 +1,116 @@
+@use "vars" as *;
+.wrapper{
+	background: #edf1f8;
+	min-height: 100vh;
+}
+#header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 70px;
+	background: white;
+	z-index: 999;
+	border-right: 1px solid #edf1f8;
+	text-align: center;
+	padding: 5px;
+	.header-show{
+		a{
+			display: block;
+			@include font-size(11);
+			padding: 8px 5px;
+			border-radius: 8px;
+			color: #768285;
+			transition: all 0.2s ease;
+			span{
+				display: block;
+				margin-top: 4px;
+			}
+			&.active, &:hover{
+				opacity: 1;
+				background: #f5f7fa;
+				color: rgb(249,73,73);
+				i{
+					color: rgb(249,73,73);
+				}
+				.isax-home-2:before { content: "\e903"; }
+				.isax-calendar-1:before { content: "\e905"; }
+				.isax-dollar-circle:before { content: "\e907"; }
+				.isax-user-octagon:before { content: "\e909"; }
+				.isax-receipt-item:before { content: "\e90b"; }
+				.isax-folder-2:before { content: "\e90d"; }
+				.isax-magicpen:before { content: "\e90f"; }
+				.isax-24-support:before { content: "\e911"; }
+			}
+		}
+		i{
+			@include font-size(21);
+			display: inline-block;
+			font-weight: 400;
+			font-style: normal;
+			line-height: 1;
+			color: #64748b;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			transition: color 0.2s ease;
+		}
+		&__open{
+			width: 59px;
+			height: 59px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			i{
+				@include font-size(24);
+			}
+		}
+	}
+	.header-nav{
+		&__menu{
+			&-item{
+				margin-bottom: 10px;
+				&:last-child{
+					margin-bottom: 0;
+				}
+				&.active > a {
+					background: #f5f7fa;
+					color: rgb(249,73,73);
+					i {
+						color: rgb(249,73,73);
+					}
+					.isax-home-2:before { content: "\e903"; }
+					.isax-calendar-1:before { content: "\e905"; }
+					.isax-dollar-circle:before { content: "\e907"; }
+					.isax-user-octagon:before { content: "\e909"; }
+					.isax-receipt-item:before { content: "\e90b"; }
+					.isax-folder-2:before { content: "\e90d"; }
+					.isax-magicpen:before { content: "\e90f"; }
+				}
+			}
+		}
+	}
+	.header-support{
+		position: absolute;
+		bottom: 30px;
+		left: 5px;
+		right: 5px;
+		i{
+			color: #f97316;
+			background: #fff7ed;
+			width: 38px;
+			height: 38px;
+			line-height: 38px;
+			border-radius: 50%;
+		}
+	}
+}
+
+
+.js-locked {
+	overflow: hidden;
+	-ms-touch-action: none;
+	touch-action: none;
+	body {
+		-webkit-overflow-scrolling: auto;
+	}
+}

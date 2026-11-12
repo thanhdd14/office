@@ -1,0 +1,140 @@
+@use "vars" as *;
+
+
+.c-fc{
+	&--white{
+		color: white !important;
+	}
+	&--black{
+		color: black !important;
+	}
+}
+
+
+
+.c-ft{//font-family
+	&--en{
+		font-family: $font-en;
+	}
+	&--jp{
+
+	}
+}
+
+
+
+.c-tx--v {
+	//Vertical writing
+	//display: inline-block;
+	-ms-writing-mode: tb-rl;
+	writing-mode: vertical-rl;
+	&-pc{
+		@include mq(md-min) {
+			-ms-writing-mode: tb-rl;
+			writing-mode: vertical-rl;
+		}
+	}
+}
+
+
+
+.c-al{
+	&--c{
+		text-align: center !important;
+	}
+	
+	&--r{
+		text-align: right !important
+	}
+	
+	&--l{
+		text-align: left !important;
+	}
+}
+
+
+
+// Image position control
+.c-pull{
+	&--left{
+		margin-left: calc(((100vw - 100%) / 2) * -1)
+	}
+	&--right{
+		margin-right: calc(((100vw - 100%) / 2) * -1)
+	}
+    margin: 0 min(-5vw, (100% - 100vw) / 2);
+}
+
+
+
+
+
+
+
+
+
+
+/* ====================================================
+Component
+==================================================== */
+// Common Text style
+.c-txt{
+	&__basic{
+
+	}
+}
+
+
+
+
+//ttl
+.c-ttl{
+	&__01{
+
+	}
+
+}
+
+//btn
+.c-btn{
+	&__01{
+		overflow: hidden;
+		position: relative;
+		height: 44px;
+		width: 100%;
+		background: $blue;
+		color: #fff;
+		font-weight: bold;
+		border: none;
+		border-radius: 8px;
+		box-shadow: 0 1px 4px -1px rgba(0, 0, 0, .14), 0 1px 4px -1px rgba(0, 0, 0, .18);
+		cursor: pointer;
+		@include font-size(14);
+		text-transform: uppercase;
+		@include smooth-transition;
+		@include hover{
+			opacity: 0.7;
+		}
+	}
+}
+
+
+//fade up
+.js-scrollin {
+	opacity: 0;
+	-webkit-transform: translate(0, 70px);
+	-ms-transform: translate(0, 70px);
+	transform: translate(0, 70px);
+	&.active{
+		opacity: 1;
+		-webkit-transform: translate(0, 0);
+		-ms-transform: translate(0, 0);
+		transform: translate(0, 0);
+		-webkit-transition: 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+		-o-transition: 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+		transition: 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	}
+}
+
+
+

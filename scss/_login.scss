@@ -1,0 +1,224 @@
+@use "vars" as *;
+.login{
+	padding: 50px 15px;
+	@include flex(center,center,wrap);
+	background: url("../img/bg.svg")no-repeat;
+	background-size: cover;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	&-wrap{
+		width: 100%;
+		max-width: 1300px;
+		margin: 0 auto;
+		@include flex(between,center,wrap);
+		&__left{
+			width: 60%;
+			max-width: 650px;
+			text-align: center;
+		}
+		&__right{
+			width: 40%;
+			max-width: 514px;
+		}
+		&__logo{
+			margin-bottom: 20px;
+			img{
+				width: 168px;
+			}
+		}
+		&__ttl{
+			@include font-size(28);
+			font-weight: 500;
+			span{
+				color: $blue;
+			}
+		}
+		&__note{
+			max-width: 482px;
+			margin: 0 auto 50px;
+			p{
+				text-align: right;
+				color: $orange;
+				@include font-size(18);
+				padding-right: 10px;
+			}
+		}
+	}
+	&-form{
+		background: white;
+		border-radius: 8px;
+		padding: 40px 32px;
+		box-shadow: 0 10px 30px rgba(26, 47, 54, .12);
+		&__heading{
+			@include flex(between,center,wrap);
+			font-weight: 500;
+			margin-bottom: 30px;
+			&-ttl{
+				@include font-size(24);
+				font-weight: 500;
+			}
+			&-language{
+				width: 200px;
+				position: relative;
+				img{
+					width: 24px;
+					display: block;
+					margin: 0 20px 0 0;
+				}
+
+				ul{
+					position: absolute;
+					top: 0;
+					right: 0;
+					width: max-content;
+					min-width: 100%;
+					margin-top: 5px;
+					background: #fff;
+					border-radius: 8px;
+					box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+					overflow: hidden;
+					z-index: 1;
+					visibility: hidden;
+					opacity: 0;
+					transform: translateY(-10px);
+					transition: all .3s ease;
+					list-style: none;
+					padding: 10px 0;
+					&.active{
+						top: 114%;
+						opacity: 1;
+						visibility: visible;
+					}
+					li{
+						a{
+							display: flex;
+							align-items: center;
+							padding: 8px 15px;
+							transition: background .2s ease;
+							color: #333;
+						}
+					}
+				}
+			}
+			&-option{
+				display: flex;
+				align-items: center;
+				padding: 5px 15px;
+				background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+				border: 1px solid #ced4da;
+				border-radius: 8px;
+				box-shadow: 0 2px 5px rgba(0, 0, 0, .05);
+				transition: all .3s ease;
+				cursor: pointer;
+				position: relative;
+				z-index: 2;
+				&:after{
+					content: "";
+					position: absolute;
+					right: 14px;
+					top: 50%;
+					transform: translateY(-50%);
+					width: 12px;
+					height: 7px;
+					background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='8' viewBox='0 0 14 8' fill='none'%3E%3Cpath d='M1 1L7 7L13 1' stroke='%235a626b' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+					background-repeat: no-repeat;
+					background-position: center;
+					background-size: contain;
+					transition: transform 0.3s ease;
+				}
+				&.active{
+					&:after{
+						transform: translateY(-50%) rotate(180deg);
+					}
+				}
+			}
+		}
+		&__show{
+			&-item{
+				position: relative;
+				margin-bottom: 20px;
+				&.focus{
+					.login-form__show-ttl{
+						top: -5px;
+						transform: translateY(0);
+						left: 14px;
+						background: white;
+					}
+				}
+			}
+			&-ttl{
+				display: inline-block;
+				position: absolute;
+				@include v-align;
+				left: 40px;
+				padding: 0 5px;
+				@include font-size(12);
+				line-height: 1;
+
+				@include smooth-transition;
+			}
+			&-icon{
+				position: absolute;
+				@include v-align;
+				left: 12px;
+				width: 20px;
+			}
+			&-eye{
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				right: 12px;
+				display: block;
+				width: 20px;
+				height: 23px;
+				cursor: pointer;
+				&:after{
+					content: "";
+					position: absolute;
+					width: 2px;
+					height: 23px;
+					background: #ccc;
+					right: 9px;
+					top: 50%;
+					transform: translateY(-50%) rotate(45deg);
+					display: none;
+				}
+				&.show{
+					&:after{
+						display: block;
+					}
+				}
+			}
+			.form-control{
+				padding-left: 50px;
+			}
+		}
+		&__check{
+			@include flex(between,center,wrap);
+			@include font-size(14);
+			margin-bottom: 50px;
+		}
+		&__sub{
+			margin-bottom: 50px;
+		}
+		&__note{
+			text-align: center;
+			p{
+				margin-bottom: 20px;
+			}
+			&-app{
+				@include flex(center,center,wrap);
+				gap: 20px;
+				img{
+					width: 150px;
+				}
+				a{
+					display: block;
+				}
+			}
+		}
+	}
+}
